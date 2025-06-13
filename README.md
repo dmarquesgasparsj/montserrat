@@ -39,6 +39,11 @@ For Laravel Sail, install:
 If not creating inside of vagrant, you may need to create your .env file by copying .env.example to .env and providing
 the database configuration settings (host, name, username and password).
 
+The `.env` file also includes localization options:
+`APP_LOCALE` sets the primary application language and `APP_FALLBACK_LOCALE`
+defines the fallback language when a translation is missing. By default both are
+set to `en`, but you may change them to `es` or `pt` as needed.
+
 Following commands must be executed **inside** your vagrant box.
 * `cd code`
 * `php artisan migrate:fresh --seed`
@@ -85,6 +90,9 @@ TWILIO_SID={twilio_sid}
 TWILIO_TOKEN={twilio_token}
 
 GOOGLE_CALENDAR_ID={google_calendar_id}
+# Optional localization settings
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
 ```
 For **Google People API** replace `{google_client_id}` with your `client ID` and `{google_client_secret}` with your `client secret`.
 
